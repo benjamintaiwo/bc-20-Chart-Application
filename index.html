@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chart Application</title>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/barchart.js"></script>
+    <script type="text/javascript" src="js/piechart.js"></script>
+    <script type="text/javascript" src="js/linechart.js"></script>
+    <script type="text/javascript" src="js/histogram.js"></script>
+    <style>
+        body{         
+          font-family: "Helvetica";
+          background-color: #EEEEEE;
+          text-align: center;
+        }
+        p{
+          padding: 0;
+          margin: 20px 0 20px 0;
+          font-size: 15px
+        }
+        h1{
+          padding: 10px;
+          color: white;
+        }
+        h3{
+          padding-top: 20px;
+        }
+        header{          
+          margin-top: 0;
+          height: 60px;
+          color: blueviolet        
+                  
+        }
+        canvas{
+          width: 100%;
+        }
+        .container{
+          width: 65%;
+          margin: 0 auto;
+        }
+        .canvas{
+          width: 60%;
+          box-shadow: 2px 2px 5px #777777;
+          position: relative;
+          margin: 40px 10px;
+          background-color: white;
+          float: right;
+         }
+        .data{
+          width: 25%;
+          text-align: center;
+          background-color: white;
+          position: relative;
+          box-shadow: 2px 2px 5px #777777;
+          margin: 40px 20px;
+          padding: 20px;
+          float: left;
+        }
+        input{
+          margin: 10px 25px 0 0;
+          width: 20%;
+          padding: 5px;            
+        }
+        select{
+          padding: 5px;          
+        }
+        option{
+          padding: 2px;          
+          font-size: 10px;
+        }
+        
+        input[type="reset"]{
+          padding: 10px;
+          background-color: #F44336;
+          color: white;
+          width: 70px;
+        }
+        input[value="PLOT"]{
+          padding: 10px;
+          background-color: #4CAF50;
+          color: white;
+          width: 70px;
+        }
+        input[id = "title"]{           
+          padding: 5px;
+          width: 70%;
+          margin: 0 auto;
+          font-size: 15px;          
+        }
+        input[name = "chart"]{    
+          width: 20px;
+        }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Chart Visualizer</h1>
+    </header>
+    
+    <div class="container">
+      <div class="data">
+        <h3> Select Chart </h3>
+        <select  id="charts">
+          <option value="barchart">Bar Chart</option>
+          <option value="piechart">Pie Chart</option>
+          <option value="linechart">Line Chart</option>
+          <option value="histogram">Histogram</option>           
+        </select>
+        <h3>Enter Your Chart Title</h3>
+        <input type="text" id="title">                
+        
+        <h3>Enter Data Set</h3>
+        
+        <p>No of Items: 
+        <select onChange="itemlist()" id="items">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+        </select>         
+        </p>
+        <div id="list"> </div><br>
+        <input type="reset" onclick="reset()" value="RESET">
+        <input type="button" onclick="plotGraph()" value="PLOT">
+        
+      </div>
+      <div class ="canvas">
+        <canvas id="chart" width="700" height="700">
+          This version of your browser is not supported.
+        </canvas>
+      </div>
+    </div>    
+  </body>
+</html>
