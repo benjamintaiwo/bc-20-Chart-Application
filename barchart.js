@@ -7,6 +7,15 @@ function barchart(dataset, max) {
 	context.clearRect(0, 0, canvas.width, canvas.height);
     plotaxis();
                 
-	
+for(var s in dataset){			    
+		context.strokeStyle="#000;";
+        context.beginPath();
+        context.rect(startx,600, 30,-dataset[s].percent*scale_f); //multiply by 10 to improve scaling
+		context.fillStyle = '#B71C1C';
+		context.fill();
+		context.font = '10pt Helvetica';
+		context.fillStyle = 'black';
+    	context.fillText(dataset[s].name, startx, 620);
+		startx += 50;	
 	}			        
 }
