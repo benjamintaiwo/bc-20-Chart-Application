@@ -27,6 +27,16 @@ function piechart(dataset,max) {
 		context.fillStyle = 'white'
 		context.fillText(dataset[s].name, x, y)
 		
+        	//create Legend
+		context.rect(canvas.width-100,starty, 15,15);
+		context.fillStyle = chartcolors[s];
+		context.fill();
+
+		context.font = '10pt Helvetica';
+		context.fillStyle = 'black';
+    	context.fillText(dataset[s].name, canvas.width-70, starty+12);
+		startAngle += dataset[s].radian;
+		starty+=20;
 
 	
 	}    
