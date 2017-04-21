@@ -17,6 +17,16 @@ function histogram(dataset, max) {
 		context.font = '10pt Helvetica';
 		context.fillStyle = 'black';
     	context.fillText(dataset[s].name, startx + 10, 620);
+		
+
+		/*	//create Legend
+		context.rect(canvas.width-100,starty, 15,15);
+		context.fillStyle = chartcolors[s];
+		context.fill();
+
+		context.font = '10pt Helvetica';
+		context.fillStyle = 'black';
+    	context.fillText(dataset[s].name, canvas.width-70, starty+12);*/
 		startx += 50;
 	}		
                 
