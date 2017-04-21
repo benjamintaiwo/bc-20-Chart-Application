@@ -2,7 +2,7 @@
 function piechart(dataset,max) {
 	var canvas = document.getElementById('chart');
 	var context = canvas.getContext('2d');
-	var chartcolors = ['#00ffff','#0000ff', '#ff00ff', '#00ff00', '	#ff0000', 
+	var chartcolors = ['#00ffff','#ff00ff','#0000ff', '#00ff00', '#ff0000', 
 						'#808000', '#000000', '#c0c0c0', '#008080', '#800000',];
 	var x = (canvas.width/2);
 	var y = (canvas.height/2);
