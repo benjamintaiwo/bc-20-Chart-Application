@@ -10,6 +10,27 @@ function piechart(dataset,max) {
 	var startAngle = 0;
     var title = document.getElementById('title').value;
     var starty = 50;
+    context.clearRect(0, 0, canvas.width, canvas.height);
+              
+    context.font = '20pt Helvetica';
+    context.fillText(title, x-100, 50);
+
+	//convert percentage in radians and plot graph				
+	for(var s in dataset){
+		dataset[s].radian = (dataset[s].percent/100)*Math.PI*2;
+		context.fillStyle = chartcolors[s];
+		context.beginPath();
+		context.arc(x, y, radius, startAngle,startAngle+dataset[s].radian, false);
+		context.lineTo(x,y);
+		context.fill();
+		context.font = '20pt serif'
+		context.fillStyle = 'white'
+		context.fillText(dataset[s].name, x, y)
+		
+
+	
+	}    
+}
 
               
     
