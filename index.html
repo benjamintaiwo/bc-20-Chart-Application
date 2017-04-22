@@ -2,100 +2,28 @@
 <html>
   <head>
     <title>Chart Application</title>
-    <script type="text/javascript" src="js/script.js"></script>
-    <script type="text/javascript" src="js/barchart.js"></script>
-    <script type="text/javascript" src="js/piechart.js"></script>
-    <script type="text/javascript" src="js/linechart.js"></script>
-    <script type="text/javascript" src="js/histogram.js"></script>
-    <style>
-        body{         
-          font-family: "Helvetica";
-          background-color: #EEEEEE;
-          text-align: center;
-        }
-        p{
-          padding: 0;
-          margin: 20px 0 20px 0;
-          font-size: 15px
-        }
-        h1{
-          padding: 10px;
-          color: white;
-        }
-        h3{
-          padding-top: 20px;
-        }
-        header{          
-          margin-top: 0;
-          height: 60px;
-          color: blueviolet        
-                  
-        }
-        canvas{
-          width: 100%;
-        }
-        .container{
-          width: 65%;
-          margin: 0 auto;
-        }
-        .canvas{
-          width: 60%;
-          box-shadow: 2px 2px 5px #777777;
-          position: relative;
-          margin: 40px 10px;
-          background-color: white;
-          float: right;
-         }
-        .data{
-          width: 25%;
-          text-align: center;
-          background-color: white;
-          position: relative;
-          box-shadow: 2px 2px 5px #777777;
-          margin: 40px 20px;
-          padding: 20px;
-          float: left;
-        }
-        input{
-          margin: 10px 25px 0 0;
-          width: 20%;
-          padding: 5px;            
-        }
-        select{
-          padding: 5px;          
-        }
-        option{
-          padding: 2px;          
-          font-size: 10px;
-        }
-        
-        input[type="reset"]{
-          padding: 10px;
-          background-color: #F44336;
-          color: white;
-          width: 70px;
-        }
-        input[value="PLOT"]{
-          padding: 10px;
-          background-color: #4CAF50;
-          color: white;
-          width: 70px;
-        }
-        input[id = "title"]{           
-          padding: 5px;
-          width: 70%;
-          margin: 0 auto;
-          font-size: 15px;          
-        }
-        input[name = "chart"]{    
-          width: 20px;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen"> 
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="barchart.js"></script>
+    <script type="text/javascript" src="piechart.js"></script>
+    <script type="text/javascript" src="linechart.js"></script>
+    <script type="text/javascript" src="histogram.js"></script>
+    
   </head>
 
   <body>
     <header>
-      <h1>Chart Visualizer</h1>
+      <h1>Chartvisualizer</h1>
+      <div class="flex-container">
+      
+
+      <nav class="nav">
+        
+      <ul>
+        <li><a href="#">Print</a></li>
+        <li><a href="#">Download</a></li>
+      </ul>
+      </div>
     </header>
     
     <div class="container">
@@ -107,7 +35,7 @@
           <option value="linechart">Line Chart</option>
           <option value="histogram">Histogram</option>           
         </select>
-        <h3>Enter Your Chart Title</h3>
+        <h3>Enter Chart Title</h3>
         <input type="text" id="title">                
         
         <h3>Enter Data Set</h3>
@@ -125,11 +53,8 @@
           <option value="8">8</option>
           <option value="9">9</option>
           <option value="10">10</option>
-          <option value="11">11</option>
-          <option value="12">12</option>
-          <option value="13">13</option>
-          <option value="14">14</option>
-        </select>         
+          </select> 
+               
         </p>
         <div id="list"> </div><br>
         <input type="reset" onclick="reset()" value="RESET">
